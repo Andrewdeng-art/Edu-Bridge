@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduBridge – Developers</title>
+  <style>
+    :root{--brand:#12773cd7;--brand2:#12773cd7;--bg:#f4f7fb;--text:#1f2937;--card:#fff;--shadow:0 10px 20px rgba(0,0,0,.08)}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    header{background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+    header a{color:#fff;text-decoration:none;font-weight:700;margin:0 10px}
+    header a:hover{text-decoration:underline}
+    .profile-menu{position:relative}.profile-icon{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer}
+    .dropdown{position:absolute;right:0;top:48px;background:#fff;border-radius:10px;box-shadow:var(--shadow);display:none;min-width:170px;overflow:hidden}
+    .dropdown a{display:block;color:#111;padding:10px 12px;text-decoration:none}.dropdown a:hover{background:#f3f4f6}.dropdown.show{display:block}
+    .container{max-width:1100px;margin:0 auto;padding:22px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:#11e6cd4d;border-radius:18px;box-shadow:var(--shadow);padding:16px;text-align:center;transition:transform .22s ease}
+    .card:hover{transform:translateY(-6px) rotate(-1deg)}
+    .avatar{width:90px;height:90px;border-radius:50%;object-fit:cover;box-shadow:0 12px 22px rgba(0,0,0,.16)}
+    footer{margin-top:24px;background:#2ecc71;color:#fff;text-align:center;padding:14px}
+  </style>
+</head>
+<body>
+<header>
+  <div><strong>EduBridge</strong></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="developers.html">Developers</a>
+    <a href="progress.html">Progress</a>
+  </nav>
+  <div class="profile-menu">
+    <div class="profile-icon" id="profileToggle">👤</div>
+    <div class="dropdown" id="profileDropdown">
+      <a href="#">Student Profile</a>
+      <a href="#">Teacher Profile</a>
+      <a href="#">Log Out</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <h1>Meet the Developers</h1>
+  <p>Team behind EduBridge.</p>
+
+  <div class="grid">
+    <div class="card">
+      <img class="avatar" src="/images/people-23.png" alt="Mitchelle">
+      <h3>Mitchelle</h3>
+      <p><b>Project Manager</b> – Coordinated tasks and delivery.</p>
+    </div>
+    <div class="card">
+      <img class="avatar" src="/images/people-23.png" alt="Beryl">
+      <h3>Beryl</h3>
+      <p><b>Product Manager</b> – Shaped features to user needs.</p>
+    </div>
+    <div class="card">
+      <img class="avatar" src="/images/people-23.png" alt="Dickens">
+      <h3>Dickens</h3>
+      <p><b>UX Researcher</b> – Led user studies and insights.</p>
+    </div>
+    <div class="card">
+      <img class="avatar" src="/images/people-23.png" alt="Sarah">
+      <h3>Sarah</h3>
+      <p><b>UX Designer</b> – Created flows and wireframes.</p>
+    </div>
+    <div class="card">
+      <img class="avatar" src="/images/people-23.png" alt="Andrew">
+      <h3>Andrew</h3>
+      <p><b>Data Analyst</b> – Measured performance & impact.</p>
+    </div>
+    <div class="card">
+      <img class="avatar" src="/images/people-23.png" alt="Dol">
+      <h3>Dol</h3>
+      <p><b>Data Analyst</b> – Tracked outcomes and insights.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 EduBridge. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const toggle=document.getElementById('profileToggle'); const dd=document.getElementById('profileDropdown');
+  toggle.addEventListener('click',e=>{e.stopPropagation(); dd.classList.toggle('show')});
+  window.addEventListener('click',e=>{if(!e.target.closest('.profile-menu')) dd.classList.remove('show')});
+</script>
+</body>
+</html>

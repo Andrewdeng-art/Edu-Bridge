@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduBridge – Home</title>
+  <style>
+    :root{--brand:#12773cd7;--brand2:#27ae60;--bg:#f4f7fb;--text:#1f2937;--card:#fff;--shadow:0 10px 20px rgba(0,0,0,.08)}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    header{background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+    header a{color:#fff;text-decoration:none;font-weight:700;margin:0 10px}
+    header a:hover{text-decoration:underline}
+    .profile-menu{position:relative} .profile-icon{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer}
+    .dropdown{position:absolute;right:0;top:48px;background:#fff;border-radius:10px;box-shadow:var(--shadow);display:none;min-width:170px;overflow:hidden}
+    .dropdown a{display:block;color:#111;padding:10px 12px;text-decoration:none} .dropdown a:hover{background:#f3f4f6}
+    .dropdown.show{display:block}
+    .container{max-width:1000px;margin:0 auto;padding:22px}
+    .hero{background:var(--card);padding:22px;border-radius:16px;box-shadow:var(--shadow)}
+    .section{background:var(--card);padding:18px;border-radius:14px;box-shadow:var(--shadow);margin-top:18px}
+    .btn{background:var(--brand);color:#fff;border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}
+    .btn:hover{background:var(--brand2)}
+    footer{margin-top:24px;background:var(--brand);color:#333333;text-align:center;padding:14px}
+  </style>
+</head>
+<body>
+<header>
+  <div style="display:flex;gap:12px;align-items:center"><strong style="font-size:18px">EduBridge</strong></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="developers.html">Developers</a>
+    <a href="progress.html">Progress</a>
+  </nav>
+  <div class="profile-menu">
+    <div class="profile-icon" id="profileToggle">👤</div>
+    <div class="dropdown" id="profileDropdown">
+      <a href="#">Student Profile</a>
+      <a href="#">Teacher Profile</a>
+      <a href="#">Log Out</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <section class="hero">
+    <h1>Welcome to EduBridge</h1>
+    <p>
+      EduBridge tackles the rural–urban <b>quality education gap in Kenya</b> by pairing
+      low-cost, solar-friendly devices with an offline-first tutoring app aligned to the
+      Kenyan syllabus. Video lessons, quick quizzes, and progress tracking help learners
+      thrive even where connectivity is limited.
+    </p>
+    <a class="btn" href="dashboard.html">Go to Dashboard</a>
+  </section>
+
+  <section class="section">
+    <h2>Problem Statement</h2>
+    <p>
+      Many learners in rural Kenyan communities lack consistent access to qualified teachers,
+      up-to-date materials, and reliable internet or electricity. This results in lower
+      outcomes and limited opportunities.
+    </p>
+    <p>
+      <b>Our approach:</b> a light, offline-capable learning app that runs well on
+      low-power, solar-charged devices; syllabus-aligned content; simple assessments; and
+      visual progress tracking for students and teachers.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>How EduBridge Helps</h2>
+    <ul>
+      <li>Kenyan syllabus structure: Primary & High School subjects → topics → subtopics</li>
+      <li>Video placeholders to embed YouTube (or local files) later</li>
+      <li>Multiple-choice quizzes with instant feedback</li>
+      <li>Progress dashboard highlighting strengths and gaps</li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025 EduBridge. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const toggle=document.getElementById('profileToggle'); const dd=document.getElementById('profileDropdown');
+  toggle.addEventListener('click',e=>{e.stopPropagation(); dd.classList.toggle('show')});
+  window.addEventListener('click',e=>{if(!e.target.closest('.profile-menu')) dd.classList.remove('show')});
+</script>
+</body>
+</html>
